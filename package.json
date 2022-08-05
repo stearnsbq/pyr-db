@@ -1,0 +1,29 @@
+{
+  "name": "pyr-cloud-api",
+  "version": "1.0.0",
+  "description": "api backend for administration of pyr-cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pyr-cloud"
+  ],
+  "author": "quinn50",
+  "license": "MIT",
+  "dependencies": {
+    "@pyrjs/core": "^1.0.8",
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/helmet": "^4.0.0",
+    "@types/morgan": "^1.9.3",
+    "classic-level": "^1.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "helmet": "^5.1.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/nanoid": "^3.0.0"
+  }
+}
