@@ -7,4 +7,6 @@ import { Module } from "@pyrjs/core";
     exports: []
 })
 export class AppModule {
+
+
 }
