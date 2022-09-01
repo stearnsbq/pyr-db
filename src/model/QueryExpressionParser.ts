@@ -92,7 +92,6 @@ export class QueryExpressionParser {
 
 
     if(this.tokens[this.currentParserIndex].type === TokenType.BINARY_OPERATOR){
-        console.log(this.tokens[this.currentParserIndex])
         operator = this.tokens[this.currentParserIndex].value;
 
         this.currentParserIndex++;
