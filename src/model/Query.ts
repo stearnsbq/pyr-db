@@ -1,7 +1,8 @@
 export interface QueryInput{
-    PartitionKey: string,
+    PartitionKey: string
     SortKeyConditionExpression: string
     ExpressionValues: ExpressionValues
+    ProjectionExpression?: string
 }
 
 

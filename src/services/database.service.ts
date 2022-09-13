@@ -9,6 +9,7 @@ import { UpdateItemInput } from '../model/UpdateItem';
 import { PutItemInput } from '../model/PutItem';
 import { DeleteItemInput } from '../model/DeleteItem';
 import { ScanInput } from '../model/Scan';
+import { InvalidInputException } from '../errors/InvalidInputException';
 
 @Injectable()
 export class DatabaseService{
@@ -56,6 +57,33 @@ export class DatabaseService{
 
             items.push(value)
    
+
+        }
+
+
+        if(scanInput?.ProjectionExpression){
+
+            const fields = scanInput.ProjectionExpression.split(",");
+
+            if(!fields || !fields.length){
+                return items;
+            }
+            
+            return items.map((item) => {
+
+                const projectedItem: any = {};
+                for(const field of fields){
+                    
+                    if(!(field in item)){
+                        throw new InvalidInputException(`field ${field} is not in the items`);
+                    }
+
+                    projectedItem[field] = item[field];
+                }
+
+
+                return projectedItem;
+            })
 
         }
 

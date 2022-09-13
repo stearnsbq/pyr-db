@@ -1,4 +1,5 @@
 export interface ScanInput{
     FilterExpression?: string;   
-    FilterExpressionValues?: {[key: string]: any} 
+    FilterExpressionValues?: {[key: string]: any};
+    ProjectionExpression?: string;
 }
